@@ -1,0 +1,514 @@
+
+
+  
+
+
+
+
+<html>
+    <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>ESPN peru</title>
+    
+    <meta http-equiv="cache-control" content="no-cache" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="expires" content="-1" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script> 
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">    
+    <style>
+       body {
+      margin: 0;
+       background: #000000;
+      font-family: 'arial', sans serif;
+    }
+    .contenedor {
+      background: #000000;
+      width: 50%;
+      margin: 0 auto;
+      padding: 10px 10px;
+      text-align: justify;
+    }
+    
+    .contenedor img {
+      width: 100%;
+    }
+    
+    @media (max-width:600px)  { 
+      .contenedor {
+        width: 90%;
+      }
+    }
+    
+    .video-container {
+        position: relative;
+        padding-bottom: 56.25%;
+        padding-top: 15px;
+        height: 0;
+         overflow: hidden;
+    }
+    
+    .video-container iframe {
+        position: absolute;
+        top:0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+    
+    .topnav {
+      overflow: hidden;
+      background-color: #000000;
+    }
+    
+    .topnav a {
+      float: left;
+      display: block;
+      color: #f2f2f2;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      font-size: 12px;
+    }
+    
+    .topnav a:hover {
+      background-color: #ddd;
+      color: black;
+    }
+    
+    .topnav a.active {
+      background-color: #68C420;
+      color: white;
+    }
+    
+    .topnav .icon {
+      display: none;
+    }
+    
+
+
+#changeVideo {
+  position: absolute;
+background-color: black;
+  top: 0px;
+  left: 0px;
+
+  opacity: 0;
+  transition: opacity .3s ease;
+  cursor: pointer;
+
+  height: 100%;
+    width:170px;
+    border: 1 px transparent;
+    font-family: 'GestaRegular', Arial, Helvetica, sans-serif;
+    overflow: auto;
+
+  /* Additional styles just to increase visual appeal */
+  color: red;
+  font-weight: bold;
+  line-height: 25px;
+  text-align: LEFT;
+  /* End */
+}
+
+/* On hovering the video, show the button */
+video:hover~#changeVideo {
+  opacity: 1.5;
+
+}
+
+#changeVideo:hover {
+  opacity: 1;
+  color:#ff0000;
+}
+
+
+
+
+
+
+::-webkit-scrollbar{
+  width: 10px;
+}
+::-webkit-scrollbar-track{
+
+  border: 0ch transparent;
+
+}
+
+
+button {
+margin: 0ch;
+text-align: left;
+text-decoration: none;
+font-size: 12px;
+cursor: pointer;
+  font-weight: bold;
+  width:120px;
+ position: absolute;
+ border: none;
+  background-color: transparent;
+  outline: none;
+text-decoration: aliceblue;
+   border: solid gray;
+    padding: 5px; color: rgb(238, 231, 231);
+      border-radius: 2px;
+
+}
+button:focus {
+  border: none;
+}
+
+button:hover {
+background-color: rgb(189, 31, 31);
+
+}
+
+            .button {
+ background-color: transparent;
+  border: 3px solid Black;
+  align:right;
+  text-align: center;
+  text-decoration: none;
+  font-size: 14px;
+  cursor: pointer;
+    font-weight: bold;
+    width: 115px;
+ border: none;
+  background-color: transparent;
+  outline: none;
+text-decoration: aliceblue;
+   border: solid gray;
+  padding: 5px; color: rgb(238, 231, 231);
+      border-radius: 2px;
+  }
+    </style>
+  
+    </head>
+    
+    <body>
+     
+      <div class="contenedor">
+        <div class="topnav" id="myTopnav">
+
+      <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        <i class="fa fa-bars"></i>
+      </a>
+    </div>
+
+
+     
+      <p align="right">
+        <input class="button" onclick="toggleFullscreen()" type="button" value="Fullscreen TV" /> </p>
+<br>
+    <div class="video-container">Loading the player...
+     
+     
+          <iframe id="iframe" width="100%" height="100%" frameborder="0" scrolling="no" allowfullscreen="true" allow="autoplay; encrypted-media;" name="iframe" src=""></iframe>
+           
+     </div>
+ 
+     <div id="changeVideo">  
+        <ul>
+          <li> <button onclick="mostrarMensaje1()">قطر1</button></li>
+          <li><button onclick="mostrarMensaje2()">قطر2</button></li>
+          <li><button onclick="mostrarMensaje3()">قطر-اليوم</button></li>
+          <li><button onclick="mostrarMensaje4()">الجزيرة</button></li>
+          <li><button onclick="mostrarMensaje5()">الريان</button></li>
+          <li><button onclick="mostrarMensaje6()">الريان2 </button></li>
+          <li><button onclick="mostrarMensaje7()">KASS 1</button></li>
+          <li><button onclick="mostrarMensaje8()">KASS 2</button></li>
+          <li> <button onclick="mostrarMensaje9()">KASS 3</button></li>
+          <li><button onclick="mostrarMensaje10()">KASS 4</button></li>
+          <li><button onclick="mostrarMensaje11()">KASS 5</button></li>
+          <li><button onclick="mostrarMensaje12()">Saudi_sport1</button></li>
+          <li><button onclick="mostrarMensaje13()">Saudi_sport2</button></li>
+          <li><button onclick="mostrarMensaje14()">Saudi_sport3</button></li>
+          <li><button onclick="mostrarMensaje15()">Saudi_sport4</button></li>
+          <li><button onclick="mostrarMensaje16()">sports1_ch</button></li>
+              <li> <button onclick="mostrarMensaje17()">Dubai-Sport1</button></li>
+              <li><button onclick="mostrarMensaje18()">Dubai-Sport2</button></li>
+              <li><button onclick="mostrarMensaje19()">Dubai-Sport3</button></li>
+              <li><button onclick="mostrarMensaje20()">Echorouk NEWS</button></li>
+              <li><button onclick="mostrarMensaje21()">Echorouk NEWS</button></li>
+              <li><button onclick="mostrarMensaje22()">EL DJAZAIRIA</button></li>
+              <li><button onclick="mostrarMensaje23()">ELHADDEF</button></li>
+              <li><button onclick="mostrarMensaje24()">ALMAGHARABIA</button></li>
+                  <li> <button onclick="mostrarMensaje25()">ELBELAD</button></li>
+              
+    
+      </ul>
+      </div>
+
+    </div>
+
+
+  
+    <script type="text/javascript">
+        function mostrarMensaje1() {
+      document.getElementById("iframe").src = "https://mondialo.pages.dev/m3u8player.html?url=aHR0cHM6Ly9xYXRhcnR2LmFrYW1haXplZC5uZXQvaGxzL2xpdmUvMjAyNjU3My9xdHYxL21hc3RlcjcyMHAubTN1OA=="
+      
+      }
+      
+      
+      function mostrarMensaje2() {
+      document.getElementById("iframe").src = "https://mondialo.pages.dev/m3u8player.html?url=aHR0cHM6Ly9xYXRhcnR2LmFrYW1haXplZC5uZXQvaGxzL2xpdmUvMjAyNjU3NC9xdHYyL21hc3RlcjU3NnAubTN1OA=="
+      }
+      
+      function mostrarMensaje3() { 
+      
+        document.getElementById("iframe").src = "https://mondialo.pages.dev/m3u8player.html?url=aHR0cHM6Ly9xYXRhcnR2LmFrYW1haXplZC5uZXQvaGxzL2xpdmUvMjAyNjU3My9xdHYxL21hc3RlcjcyMHAubTN1OA=="
+      
+      
+      }
+      
+      function mostrarMensaje4() {
+      document.getElementById("iframe").src = "https://mondialo.pages.dev/m3u8player.html?url=aHR0cHM6Ly9saXZlLWhscy13ZWItYWptLmdldGFqLm5ldC9BSk0vMDQubTN1OA=="
+      }
+      
+      function mostrarMensaje5() {
+      document.getElementById("iframe").src = "https://mondialo.pages.dev/m3u8player.html?url=aHR0cHM6Ly9zdnMuaXR3b3Jrc2Nkbi5uZXQvYWxyYXl5YW5xYWRlZW1saXZlL2FscmF5eWFucWFkZWVtLnNtaWwvYWxyYXl5YW5xYWRlZW1wdWJsaWNoL2FscmF5eWFucWFkZWVtX3NvdXJjZS9jaHVua3MubTN1OA=="
+      }
+        
+        
+      function mostrarMensaje6() {
+      document.getElementById("iframe").src = "https://mondialo.pages.dev/m3u8player.html?url=aHR0cHM6Ly9zdnMuaXR3b3Jrc2Nkbi5uZXQvYWxyYXl5YW5saXZlL2FscmF5eWFuLnNtaWwvYWxyYXl5YW5wdWJsaXNoL2FscmF5eWFuX3NvdXJjZS9jaHVua3MubTN1OA=="
+      }
+        
+       
+      function mostrarMensaje7() {
+      document.getElementById("iframe").src = "https://mondialo.pages.dev/m3u8player.html?url=aHR0cHM6Ly9saXZlYWtnci5hbGthc3NkaWdpdGFsLm5ldC9obHMvbGl2ZS8yMDk3MDM3L0Fsa2FzczFjdGZzZC9tYXN0ZXIubTN1OA=="
+      }
+        
+        
+        function mostrarMensaje8() {
+      document.getElementById("iframe").src = "https://mondialo.pages.dev/m3u8player.html?url=aHR0cHM6Ly9saXZlYWtnci5hbGthc3NkaWdpdGFsLm5ldC9obHMvbGl2ZS8yMDk3MDM3L0Fsa2FzczJuYmNxYXcvbWFzdGVyMzQwLm0zdTg="
+      }
+        
+          function mostrarMensaje9() {
+      document.getElementById("iframe").src = "https://mondialo.pages.dev/m3u8player.html?url=aHR0cHM6Ly9saXZlYWtnci5hbGthc3NkaWdpdGFsLm5ldC9obHMvbGl2ZS8yMDk3MDM3L0Fsa2FzczNhY3Rmc2RjYS9tYXN0ZXIubTN1OA=="
+      }
+        
+        
+        
+          function mostrarMensaje10() {
+      document.getElementById("iframe").src = "https://mondialo.pages.dev/m3u8player.html?url=aHR0cHM6Ly9saXZlYWsuYWxrYXNzZGlnaXRhbC5uZXQvbGl2ZWh0dHBvcmlnaW4vc21pbDpZV3hyWVhOaDIuc21pbC9jaHVua2xpc3RfYjYyODAwMF9zbGVuZy5tM3U4"
+      }
+        
+        
+            function mostrarMensaje11() {
+      document.getElementById("iframe").src = "https://mondialo.pages.dev/m3u8player.html?url=aHR0cHM6Ly9saXZlYWsuYWxrYXNzZGlnaXRhbC5uZXQvbGl2ZWh0dHBvcmlnaW4vc21pbDpZV3hyWVhOaDMuc21pbC9jaHVua2xpc3QubTN1OA=="
+      }
+        
+        
+              function mostrarMensaje12() {
+      document.getElementById("iframe").src = "saoudi_sports.html"
+      }
+        
+        
+        
+                function mostrarMensaje13() {
+      document.getElementById("iframe").src = "saoudi_sports2.html"
+      }
+        
+        
+                  function mostrarMensaje14() {
+      document.getElementById("iframe").src = "saoudi_sports3.html"
+      }
+        
+        
+                  function mostrarMensaje15() {
+      document.getElementById("iframe").src = "saoudi_sports4.html"
+      }
+                    function mostrarMensaje16() {
+      document.getElementById("iframe").src = "charikasports1.html"
+      }
+        
+        
+                      function mostrarMensaje17() {
+      document.getElementById("iframe").src = "dbsports1_embed.html"
+      }
+        
+        
+                        function mostrarMensaje18() {
+      document.getElementById("iframe").src = "dbsports2_embed.html"
+      }
+                          function mostrarMensaje19() {
+      document.getElementById("iframe").src = "dbsports3_embed.html"
+      }
+        
+        
+            function mostrarMensaje20() { 
+      document.getElementById("iframe").src = "https://www.elahmad.com/tv/algeria_live.php?id=echorouk_news"
+      }
+              function mostrarMensaje21() { 
+      document.getElementById("iframe").src = "https://www.elahmad.com/tv/mobiletv/glarb.php?id=echorouk_news"
+      }
+        
+        
+                function mostrarMensaje22() { 
+      document.getElementById("iframe").src = "https://www.elahmad.com/tv/algeria_live.php?id=el_djazairia"
+      }
+        
+        
+                  function mostrarMensaje23() { 
+      document.getElementById("iframe").src = "https://www.elahmad.com/tv/algeria_live.php?id=elheddaf"
+      }
+        
+        
+                    function mostrarMensaje24() { 
+      document.getElementById("iframe").src = "https://www.elahmad.com/tv/mobiletv/glarb.php?id=almagharibia"
+      }
+        
+        
+                      function mostrarMensaje25() { 
+      document.getElementById("iframe").src = "https://www.elahmad.com/tv/algeria_live.php?id=elbilad"
+      }
+        
+                        function mostrarMensaje26() { 
+      document.getElementById("iframe").src = "https://barhomusdza.github.io/uji/m3u8player.html?url=aHR0cHM6Ly92ZXJzYXRpbGUtd2lsZHNpZGV0di0xLWZyLnNhbXN1bmcud3VybC50di9wbGF5bGlzdC5tM3U4"
+      }
+        
+        
+                          function mostrarMensaje27() {
+      document.getElementById("iframe").src = "https://barhomusdza.github.io/uji/m3u8player.html?url=aHR0cHM6Ly9yYWt1dGVuLXNwb3RsaWdodC03LWZyLnNhbXN1bmcud3VybC50di9wbGF5bGlzdC5tM3U4"
+      }
+        
+                            function mostrarMensaje28() { 
+      document.getElementById("iframe").src = "https://barhomusdza.github.io/uji/m3u8player.html?url=aHR0cHM6Ly9yYWt1dGVuLWZhbWlseS03LWZyLnNhbXN1bmcud3VybC50di9wbGF5bGlzdC5tM3U4"
+      }
+        
+        
+                              function mostrarMensaje29() { 
+      document.getElementById("iframe").src = "https://barhomusdza.github.io/uji/m3u8player.html?url=aHR0cHM6Ly9yYWt1dGVuLWNvbWVkeW1vdmllcy03LWZyLnNhbXN1bmcud3VybC50di9wbGF5bGlzdC5tM3U4"
+      }
+        
+        
+                                function mostrarMensaje30() { 
+      document.getElementById("iframe").src = "https://barhomusdza.github.io/uji/m3u8player.html?url=aHR0cHM6Ly9yYWt1dGVuLWFjdGlvbm1vdmllcy03LWZyLnNhbXN1bmcud3VybC50di9wbGF5bGlzdC5tM3U4"
+      }
+        
+        
+                                  function mostrarMensaje31() {
+      document.getElementById("iframe").src = "https://barhomusdza.github.io/uji/m3u8player.html?url=aHR0cHM6Ly9mdWVsdHYtZnVlbHR2LTgtZnIuc2Ftc3VuZy53dXJsLmNvbS9tYW5pZmVzdC9wbGF5bGlzdC5tM3U4"
+      }
+        
+        
+                                    function mostrarMensaje32() { 
+      document.getElementById("iframe").src = "https://barhomusdza.github.io/uji/m3u8player.html?url=aHR0cHM6Ly9yYWt1dGVuLXRvcGZyZWUtNy1ldS5yYWt1dGVuLnd1cmwudHYvcGxheWxpc3QubTN1OA=="
+      }
+        
+                                      function mostrarMensaje33() {
+      document.getElementById("iframe").src = "https://barhomusdza.github.io/uji/m3u8player.html?url=aHR0cHM6Ly9yYWt1dGVuLXRvcGZyZWUtNy1mci5wbGV4Lnd1cmwudHYvcGxheWxpc3QubTN1OA=="
+      }
+        
+        
+                                        function mostrarMensaje34() { 
+      document.getElementById("iframe").src = "https://barhomusdza.github.io/uji/m3u8player.html?url=aHR0cHM6Ly9yYWt1dGVuLXJvbWFuY2UtNy1ldS5yYWt1dGVuLnd1cmwudHYvcGxheWxpc3QubTN1OA=="
+      }
+        
+        
+                                          function mostrarMensaje35() { 
+      document.getElementById("iframe").src = "https://barhomusdza.github.io/uji/m3u8player.html?url=aHR0cHM6Ly9yYWt1dGVuLXJvbWFuY2UtNy1mci5wbGV4Lnd1cmwudHYvcGxheWxpc3QubTN1OA=="
+      }
+        
+        
+                                            function mostrarMensaje36() { 
+      document.getElementById("iframe").src = "https://barhomusdza.github.io/uji/m3u8player.html?url=aHR0cHM6Ly9yYWt1dGVuLWZpbG1zLWZyYW5jYWlzLTEtZXUucmFrdXRlbi53dXJsLnR2L3BsYXlsaXN0Lm0zdTg="
+      }
+        
+                                              function mostrarMensaje37() { 
+      document.getElementById("iframe").src = "https://barhomusdza.github.io/uji/m3u8player.html?url=aHR0cHM6Ly9yYWt1dGVuLXR2c2hvd3MtNy1ldS5yYWt1dGVuLnd1cmwudHYvcGxheWxpc3QubTN1OA=="
+      }
+        
+        
+                                                function mostrarMensaje38() { 
+      document.getElementById("iframe").src = "https://barhomusdza.github.io/uji/m3u8player.html?url=aHR0cHM6Ly9yYWt1dGVuLXR2c2hvd3MtNy1mci5wbGV4Lnd1cmwudHYvcGxheWxpc3QubTN1OA=="
+      }
+        
+        
+                                                 function mostrarMensaje39() { 
+      document.getElementById("iframe").src = "https://barhomusdza.github.io/uji/m3u8player.html?url=aHR0cHM6Ly9yYWt1dGVuLWRvY3VtZW50YXJpZXMtNy1ldS5yYWt1dGVuLnd1cmwudHYvcGxheWxpc3QubTN1OA=="
+      }
+        
+        
+        
+        
+                                                   function mostrarMensaje40() {
+      document.getElementById("iframe").src = "https://barhomusdza.github.io/uji/m3u8player.html?url=aHR0cHM6Ly9yYWt1dGVuLWRvY3VtZW50YXJpZXMtNy1mci5wbGV4Lnd1cmwudHYvcGxheWxpc3QubTN1OA=="
+      }
+        
+        
+        
+                                                     function mostrarMensaje41() { 
+      document.getElementById("iframe").src = "https://barhomusdza.github.io/uji/m3u8player.html?url=aHR0cHM6Ly9hbWcwMDc2Mi1hZG4tYWRuLXJha3V0ZW4tam53b28uYW1hZ2kudHYvaGxzL2FtYWdpX2hsc19kYXRhX3Jha3V0ZW5BQS1hZG4tcmFrdXRlbi9DRE4vbWFzdGVyLm0zdTg="
+      }
+        
+        
+        
+                                                       function mostrarMensaje42() { 
+      document.getElementById("iframe").src = "https://barhomusdza.github.io/uji/m3u8player.html?url=aHR0cHM6Ly9yYWt1dGVuLXNwb3RsaWdodC03LWV1LnJha3V0ZW4ud3VybC50di9wbGF5bGlzdC5tM3U4"
+      }
+        
+                                                         function mostrarMensaje43() { 
+      document.getElementById("iframe").src = "https://barhomusdza.github.io/uji/m3u8player.html?url=aHR0cHM6Ly9yYWt1dGVuLXNwb3RsaWdodC03LWZyLnBsZXgud3VybC50di9wbGF5bGlzdC5tM3U4"
+      }
+        
+        
+                                                           function mostrarMensaje44() { 
+      document.getElementById("iframe").src = "https://barhomusdza.github.io/uji/m3u8player.html?url=aHR0cHM6Ly9yYWt1dGVuLWNvbWVkeW1vdmllcy03LWV1LnJha3V0ZW4ud3VybC50di9wbGF5bGlzdC5tM3U4"
+      }
+        
+                                                             function mostrarMensaje45() { 
+      document.getElementById("iframe").src = "https://barhomusdza.github.io/uji/m3u8player.html?url=aHR0cHM6Ly9yYWt1dGVuLWNvbWVkeW1vdmllcy03LWZyLnBsZXgud3VybC50di9wbGF5bGlzdC5tM3U4"
+      }
+        
+        
+                                                               function mostrarMensaje46() { 
+      document.getElementById("iframe").src = "https://barhomusdza.github.io/uji/m3u8player.html?url=aHR0cHM6Ly9yYWt1dGVuLWFjdGlvbm1vdmllcy03LWV1LnJha3V0ZW4ud3VybC50di9wbGF5bGlzdC5tM3U4"
+      }
+        
+                                                                 function mostrarMensaje47() {
+      document.getElementById("iframe").src = "https://barhomusdza.github.io/uji/m3u8player.html?url=aHR0cHM6Ly9yYWt1dGVuLWFjdGlvbm1vdmllcy03LWZyLnBsZXgud3VybC50di9wbGF5bGlzdC5tM3U4"
+      }
+        
+        
+                    function mostrarMensaje48() {
+      document.getElementById("iframe").src = "https://alilus.github.io/playerk1k2/m3u8player.html?get=https://amg01402-alchimiemedia-atelierchefs-xiaomi-niwpx.amagi.tv/playlist/amg01402-alchimiemedia-atelierchefs-xiaomi/cb573d167a6c638b84cb3778d1f74982847b3dcb0e6c886470af4a9765d97800dbe8ae84ae5b910c4c9e1fc061017d360439cd1dd56c49c1da63b820743c4b21fdcde00080dd0d0cb1df11292ca36265299a7369cc350f7bd2ec5a2f803ebe764c53cb017c593f88f258ac764cc59e0a957f39e8fc8b307b24455a9c5a43e6a64cb7ace5594cdb6bf4b7011ac12f43fa83439c8001e980825b834ad770a4419cc3a2dad4168ae4d159966f4ad69939581fa9a53bf7f958a4cfe81153fe420936d0d17bc1e9937d3393534b1cd9f2cead6cfc12b4e24d29a1a7da72fc638d3d8b29da610420dec1dfd8f36f6043c0e8526c26ea85f2c893544240173e7f48aa3bdce0a2652e1b144feb826154b1f0ce068dc014d99a2a88b553d059aa9e689487bb8fe3b1c21fd2758a8fc391334641741742a869e2cb3d957986389fc71d77081604b5cc018dc6f84e206e4ab1855cff1a0ff68ed8d4915d6d8a283072dc4df5174560c53f693cc228fa913325c90502973a30fe1764d112b2e862a5e98ba5353ab3dfd54bb03abce24481a070dc07566e0bbdf62348560c2c809c012304399215aa83b0a21d6f27e3f8caf2c529482431055d018ea2aa30ac87ce2d1201d211414471031c820bc663bd5818d5d209a78627352dbdd00a643ae9ff09/81/960x540_2428800/index.m3u8"
+      }
+        
+      </script>
+
+
+    <script>
+    function myFunction() {
+      var x = document.getElementById("myTopnav");
+      if (x.className === "topnav") {
+        x.className += " responsive";
+      } else {
+        x.className = "topnav";
+      }
+    }
+    </script>
+    <footer>
+    
+    
+    
+    </footer>
+
+<script>function toggleFullscreen() {
+  let elem = document.querySelector("iframe");
+
+  if (!document.fullscreenElement) {
+    elem.requestFullscreen().catch((err) => {
+      alert(`Error attempting to enable fullscreen mode: ${err.message} (${err.name})`);
+    });
+  } else {
+    document.exitFullscreen();
+  }
+}</script>
+
+  
+
+</body></html>
